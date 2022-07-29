@@ -20,7 +20,7 @@
 
   `git clone https://github.com/user/repo.git nameFolder`
 
-  **git@github.com:user/repo.git и https://github.com/user/repo.git** это ссылки на ваш проект
+  `git@github.com:user/repo.git` и `https://github.com/user/repo.git` это ссылки на ваш проект
 
   **nameFolder** – это название папки, в которую скопируется проект. Если название папки не указывать, то система создаст папку автоматически с названием **repo**
 
@@ -46,7 +46,7 @@
 
   `git remote add academy https://github.com/academy/repo.git`
 
-  **git@github.com:user/repo.git и https://github.com/academy/repo.git -** это ссылки именно мастер-репозиторий Академии, а не вашего репозитория
+  `git@github.com:academy/repo.git` и `https://github.com/academy/repo.git` - это ссылки именно мастер-репозиторий Академии, а не вашего репозитория
 
   Что бы проверить все ли вы сделали правильно
 
@@ -63,7 +63,7 @@
 
   ```
 
-Проверяем ссылки в **origin** должна быть ссылка на ваш репозиторий, а в **academy** – ссылка на репозиторий Академии. Если клонировали проект по ssh, то ссылки должны быть все вида **git@github.com:user/repo.git,** если клонировали проект по https, то ссылки должны быть вида **https://github.com/user/repo.git**
+Проверяем ссылки в **origin** должна быть ссылка на ваш репозиторий, а в **academy** – ссылка на репозиторий Академии. Если клонировали проект по ssh, то ссылки должны быть все вида `git@github.com:user/repo.git`, если клонировали проект по https, то ссылки должны быть вида `https://github.com/user/repo.git`
 
 # **ВЫПОЛНЕНИЕ ДОМАШНЕГО ЗАДАНИЯ**
 
