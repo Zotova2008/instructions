@@ -1,4 +1,5 @@
 ```
+
 {
   // Доводка рабочей области
   "workbench.colorCustomizations": {
@@ -570,4 +571,5 @@
   },
   "csscomb.formatOnSave": true,
 }
+
 ```
