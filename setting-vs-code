@@ -1,8 +1,3 @@
-# Настройки для vx code
-=======================
-
-```
-
   // Доводка рабочей области
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#fff3"
@@ -572,6 +567,3 @@
     ]
   },
   "csscomb.formatOnSave": true,
-
-
-```
