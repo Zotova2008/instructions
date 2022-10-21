@@ -1,8 +1,15 @@
 #Настройка setting.json для VS Code
 ===================================
 
+Нужно установить следующие плагины
+- Для сортировки свойств в css, настройки пробелов и переносов
+[Csscomb](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-csscomb)
+- Для проверки html на ошибки
+[HTMLHint](https://marketplace.visualstudio.com/items?itemName=HTMLHint.vscode-htmlhint)
+
+
 ```
-// Форматировать при сохранении
+  // Форматировать при сохранении
   "editor.formatOnSave": true,
   // Форматировать при вставке
   "editor.formatOnPaste": true,
@@ -103,10 +110,15 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  // Форматирование плагином Prettier - Code formatter
+    // Форматирование встроенными средствами
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
+  // Форматирование плагином Prettier - Code formatter
+  // Плохо форматирует длинные свойства, начинает перенос
+  // "[css]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
   // Форматирование встроенными средствами
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
