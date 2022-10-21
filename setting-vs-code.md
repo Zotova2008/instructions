@@ -2,32 +2,24 @@
 ===================================
 
 ```
-// Доводка рабочей области
-  "workbench.colorCustomizations": {
-    "tab.activeBackground": "#fff3"
-  },
-  "workbench.editor.limit.value": 5,
-  // Папки в компактном виде
-  "explorer.compactFolders": false,
-  // Доводка терминала
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.fontSize": 14,
-  // Управляет подсказками при наведении
-  "editor.hover.enabled": false,
-  // Форматировать при сохранении
+// Форматировать при сохранении
   "editor.formatOnSave": true,
   // Форматировать при вставке
   "editor.formatOnPaste": true,
   // Управляет тем, как следует переносить строки
   "editor.wordWrap": "bounded",
   // Работает с настройкой "editor.wordWrap": "bounded". Текст переносится взависимости от ширины окна
-  "editor.wordWrapColumn": 200,
-  // Количество пробелов при форматировании
-  "editor.tabSize": 2,
+  "editor.wordWrapColumn": 500,
+  // // Количество пробелов при форматировании
+  // "editor.tabSize": 2,
   // Включена ли поддержка связанного редактирования в редакторе
   "editor.linkedEditing": true,
+  // Размер шрифта в редакторе
+  "editor.fontSize": 14,
   // Активируем раскраску парных скобок. true по умолчанию
-  // "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  // Какой клавишей проставляются несколько курсоров
+  "editor.multiCursorModifier": "ctrlCmd",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -41,8 +33,13 @@
   "explorer.confirmDragAndDrop": false,
   // Чудо настройки отменяют перенос атрибутов при форматировщике
   "html.format.wrapLineLength": 0,
-  // Настройки для плагина HtmlHint
+  "html.format.enable": true,
+  // Удаляет пустые строки
+  "html.format.maxPreserveNewLines": 1,
+  // Убирает проверку doctype плагин HtmlHint, приходится дублировать остальные свойства, иначе он их почему то отключает
   "htmlhint.options": {
+    // Doctype должен быть объявлен первым.
+    "doctype-first": false,
     // Недопустимый тип документа.
     "doctype-html5": true,
     // атрибут HTML lang является обязательным.
@@ -64,7 +61,7 @@
     // Все атрибуты должны иметь значения.
     "attr-value-not-empty": false,
     // Атрибуты отсортированы по порядку: class, id, name, src, for, type, href, value, title, alt, role, aria..
-    "attr-sorted": true,
+    "attr-sorted": false,
     // Нет начальных или конечных пробелов в значениях атрибутов.
     // Должен присутствовать атрибут alt элемента, а атрибут alt области [href] и input [type=image] должны иметь значение.
     "alt-require": true,
@@ -93,6 +90,7 @@
     // Специальные символы должны быть экранированы.
     "spec-char-escape": true,
   },
+  "html-css-class-completion.enableEmmetSupport": true,
   // Форматирование встроенными средствами
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -106,20 +104,32 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   // Форматирование плагином Prettier - Code formatter
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // Форматирование плагином Prettier - Code formatter
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // Форматирование встроенными средствами
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  // Форматирование плагином Prettier - Code formatter. 
+  // Плохо форматирует длинные свойства, начинает перенос
+  // "[scss]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
   // Форматирование встроенными средствами
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   // Настройки для LiveServer
   "liveServer.settings.donotShowInfoMsg": true,
-  "html-css-class-completion.enableEmmetSupport": true,
+  "[php]": {
+    // "editor.defaultFormatter": "junstyle.php-cs-fixer",
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.formatOnSave": true
+  },
+  "emmet.includeLanguages": {
+    "php": "html"
+  },
   // Настройки для плагина Stylelint
   "stylelint.validate": [
     "css",
@@ -131,6 +141,7 @@
   // Настройки для плагина Csscomb
   "csscomb.preset": {
     "always-semicolon": true,
+    // "block-indent": "  ",
     "color-case": "lower",
     "color-shorthand": false,
     "element-case": "lower",
@@ -139,7 +150,21 @@
     "quotes": "double",
     "remove-empty-rulesets": true,
     "sort-order-fallback": "abc",
+    // Без них лучше, нарушают отступы
+    // "space-before-colon": "",
+    // "space-after-colon": " ",
+    // "space-before-combinator": " ",
+    // "space-after-combinator": " ",
+    // "space-between-declarations": "\n",
+    // "space-before-opening-brace": " ",
+    // "space-after-opening-brace": "\n",
+    // "block-indent": "  ",
+    // "space-before-selector-delimiter": "",
+    // "space-after-selector-delimiter": "\n",
+    // "space-after-closing-brace": "",
+    // "space-before-closing-brace": "\n",
     "strip-spaces": true,
+    // "tab-size": 2,
     "unitless-zero": true,
     "vendor-prefix-align": true,
     "lines-between-rulesets": 1,
