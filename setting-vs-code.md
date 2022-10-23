@@ -4,11 +4,17 @@
 Нужно установить следующие плагины
 - Для сортировки свойств в css, настройки пробелов и переносов
 [Csscomb](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-csscomb)
+- Для форматирования css кода, настройки пробелов и переносов, может работать вместе с CSSComb
+[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - Для проверки html на ошибки
 [HTMLHint](https://marketplace.visualstudio.com/items?itemName=HTMLHint.vscode-htmlhint)
 
 
+Настройки нужно прописать в файле пользовательских настроек settings.json 
+Параметры - Палитра команд - набрать settings - выбрать "Preferences: Open User Settings (JSON)" или "Параметры: Открыть пользовательские настройки" 
+
 ```
+{
   // Форматировать при сохранении
   "editor.formatOnSave": true,
   // Форматировать при вставке
@@ -17,8 +23,6 @@
   "editor.wordWrap": "bounded",
   // Работает с настройкой "editor.wordWrap": "bounded". Текст переносится взависимости от ширины окна
   "editor.wordWrapColumn": 500,
-  // // Количество пробелов при форматировании
-  // "editor.tabSize": 2,
   // Включена ли поддержка связанного редактирования в редакторе
   "editor.linkedEditing": true,
   // Размер шрифта в редакторе
@@ -46,7 +50,7 @@
   // Убирает проверку doctype плагин HtmlHint, приходится дублировать остальные свойства, иначе он их почему то отключает
   "htmlhint.options": {
     // Doctype должен быть объявлен первым.
-    "doctype-first": false,
+    "doctype-first": true,
     // Недопустимый тип документа.
     "doctype-html5": true,
     // атрибут HTML lang является обязательным.
@@ -68,7 +72,7 @@
     // Все атрибуты должны иметь значения.
     "attr-value-not-empty": false,
     // Атрибуты отсортированы по порядку: class, id, name, src, for, type, href, value, title, alt, role, aria..
-    "attr-sorted": false,
+    // "attr-sorted": false,
     // Нет начальных или конечных пробелов в значениях атрибутов.
     // Должен присутствовать атрибут alt элемента, а атрибут alt области [href] и input [type=image] должны иметь значение.
     "alt-require": true,
@@ -110,38 +114,21 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-    // Форматирование встроенными средствами
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  },
   // Форматирование плагином Prettier - Code formatter
-  // Плохо форматирует длинные свойства, начинает перенос
-  // "[css]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // Форматирование встроенными средствами
-  "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // Форматирование плагином Prettier - Code formatter. 
-  // Плохо форматирует длинные свойства, начинает перенос
-  // "[scss]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
+  // Плохо форматирует длинные свойства, начинает перенос. Для исправления нужно в корень проекта поместить файл .prettierrc с соответствующей настройкой:  { "printWidth": 120 }
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // Форматирование встроенными средствами
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   // Настройки для LiveServer
   "liveServer.settings.donotShowInfoMsg": true,
-  "[php]": {
-    // "editor.defaultFormatter": "junstyle.php-cs-fixer",
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-    "editor.formatOnSave": true
-  },
-  "emmet.includeLanguages": {
-    "php": "html"
-  },
   // Настройки для плагина Stylelint
   "stylelint.validate": [
     "css",
@@ -153,7 +140,6 @@
   // Настройки для плагина Csscomb
   "csscomb.preset": {
     "always-semicolon": true,
-    // "block-indent": "  ",
     "color-case": "lower",
     "color-shorthand": false,
     "element-case": "lower",
@@ -162,21 +148,7 @@
     "quotes": "double",
     "remove-empty-rulesets": true,
     "sort-order-fallback": "abc",
-    // Без них лучше, нарушают отступы
-    // "space-before-colon": "",
-    // "space-after-colon": " ",
-    // "space-before-combinator": " ",
-    // "space-after-combinator": " ",
-    // "space-between-declarations": "\n",
-    // "space-before-opening-brace": " ",
-    // "space-after-opening-brace": "\n",
-    // "block-indent": "  ",
-    // "space-before-selector-delimiter": "",
-    // "space-after-selector-delimiter": "\n",
-    // "space-after-closing-brace": "",
-    // "space-before-closing-brace": "\n",
     "strip-spaces": true,
-    // "tab-size": 2,
     "unitless-zero": true,
     "vendor-prefix-align": true,
     "lines-between-rulesets": 1,
@@ -608,4 +580,5 @@
     ]
   },
   "csscomb.formatOnSave": true,
+}
 ```
