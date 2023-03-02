@@ -128,8 +128,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  // Настройки для LiveServer
-  "liveServer.settings.donotShowInfoMsg": true,
   // Настройки для плагина Stylelint
   "stylelint.validate": [
     "css",
