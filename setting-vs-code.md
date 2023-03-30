@@ -41,6 +41,8 @@
     "comments": false,
     "strings": false
   },
+  // Добавляет пустую строчку в файлах
+  "files.insertFinalNewline": true,
   // Должно ли запрашивать разрешение на перемещении файлов и папок
   "explorer.confirmDragAndDrop": false,
   // Чудо настройки отменяют перенос атрибутов при форматировщике
