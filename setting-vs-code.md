@@ -5,9 +5,10 @@
 - Для сортировки свойств в css, настройки пробелов и переносов
 [Csscomb](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-csscomb)
 - Для форматирования css кода, настройки пробелов и переносов, может работать вместе с CSSComb
-[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), но есть некоторые конфликты, поэтому лучше воспользоваться встроенным форматировщиком для css в vs code в тандеме с CSSComb.
 - Для проверки html на ошибки
 [HTMLHint](https://marketplace.visualstudio.com/items?itemName=HTMLHint.vscode-htmlhint)
+- Для форматирования html файлов лучше воспользоваться встроенным форматировщиком для html в vs code
 
 
 Настройки нужно прописать в файле пользовательских настроек settings.json 
@@ -30,7 +31,7 @@
   "editor.fontSize": 14,
   // Активируем раскраску парных скобок. true по умолчанию
   "editor.bracketPairColorization.enabled": true,
-  // Какой клавишей проставляются несколько курсоров
+  // Какой клавишей проставляются несколько курсоров, данное поведение настройте под себя в "Параметры" vs code
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -119,12 +120,12 @@
   },
   // Форматирование плагином Prettier - Code formatter
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   // Форматирование плагином Prettier - Code formatter. 
   // Плохо форматирует длинные свойства, начинает перенос. Для исправления нужно в корень проекта поместить файл .prettierrc с соответствующей настройкой:  { "printWidth": 120 }
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   // Форматирование встроенными средствами
   "[javascript]": {
@@ -152,7 +153,8 @@
     "strip-spaces": true,
     "unitless-zero": true,
     "vendor-prefix-align": true,
-    "lines-between-rulesets": 1,
+		// Если включить эту опцию, то будет добавляться пустая строка между @import
+		// "lines-between-rulesets": 1,
     "sort-order": [
       [
         "$variable"
