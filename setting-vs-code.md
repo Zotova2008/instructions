@@ -163,9 +163,6 @@
         "$include"
       ],
       [
-        "$include mixin-name"
-      ],
-      [
         "$extend"
       ],
       [
@@ -271,13 +268,13 @@
         "table-layout",
         "empty-cells",
         "caption-side",
-        "font",
-        "font-style",
-        "font-variant",
-        "font-weight",
-        "font-size",
-        "line-height",
-        "font-family",
+	"font",
+	"font-family",
+	"font-size",
+	"line-height",
+	"font-weight",
+	"font-style",
+	"font-variant",
         "vertical-align",
         "text-align",
         "direction",
